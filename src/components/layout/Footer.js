@@ -2,9 +2,11 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div>
-      <h1>Footer Component</h1>
-    </div>
+    <footer style={{ textAlign: 'center' }}>
+      <p>
+        Created by <strong>leocsdev</strong>
+      </p>
+    </footer>
   );
 };
 

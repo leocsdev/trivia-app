@@ -1,0 +1,17 @@
+.trivia-container {
+  margin: 0 auto;
+
+  /* use flex */
+  display: flex;
+
+  /* this sets footer at the bottom */
+  flex-direction: column;
+
+  /* set container to screen height (viewport height) */
+  min-height: 100vh;
+}
+
+.trivia-content {
+  /* allow the content to grow as needed and leave enough space for footer */
+  flex-grow: 1;
+}

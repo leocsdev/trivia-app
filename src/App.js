@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import './App.css';
+
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Trivia from './components/Trivia';
-
-import './App.css';
+import About from './components/About';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <h1>Hello from App Component</h1>
-        <Header />
-        <Trivia />
-        <Footer />
-      </div>
+      <Router>
+        <div className="trivia-container">
+          <Header branding="Trivia App" />
+          <div className="container trivia-content">
+            <Switch>
+              <Route exact path="/" component={Trivia} />
+              <Route exact path="/about" component={About} />
+            </Switch>
+          </div>
+          <Footer />
+        </div>
+      </Router>
     );
   }
 }
