@@ -24,32 +24,26 @@ class Trivia extends Component {
   };
 
   render() {
-    if (this.state.trivia.length === 0) {
-      return (
-        <div>
-          <h1>LOADING...</h1>
-        </div>
-      );
-    } else {
-      const { category, question, correct_answer } = this.state.trivia;
-      return (
-        <div>
-          <p>
-            <strong>{category}</strong>
-          </p>
-          <p>
-            <strong>QUESTION:</strong> {question}
-          </p>
-          <p>
-            <strong>ANSWER:</strong> {correct_answer}
-          </p>
-          <br />
-          <button onClick={this.onClickHandler} className="btn btn-primary">
-            Next Trivia
-          </button>
-        </div>
-      );
-    }
+    const { category, question, correct_answer } = this.state.trivia;
+    return !category && !question && !correct_answer ? (
+      <h1>Loading...</h1>
+    ) : (
+      <div>
+        <p>
+          <strong>{category}</strong>
+        </p>
+        <p>
+          <strong>QUESTION:</strong> {question}
+        </p>
+        <p>
+          <strong>ANSWER:</strong> {correct_answer}
+        </p>
+        <br />
+        <button onClick={this.onClickHandler} className="btn btn-primary">
+          Next Trivia
+        </button>
+      </div>
+    );
   }
 }
 
